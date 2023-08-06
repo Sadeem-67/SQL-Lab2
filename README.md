@@ -5,19 +5,19 @@
  <img src="Lab2.png" width="500" height="500">
 
 ### Q1: Choose all employees who have received an award (Nested Query)?
-Query:
+Query:SELECT * FROM employee WHERE id IN (SELECT employee_id From Awards );
 
-Output:
+Output: 
  
 
 ### Q2: Choose all employees who have never received an award (Nested Query)?
-Query:
+Query:SELECT * FROM employee WHERE id NOT IN (SELECT employee_id From Awards );
 
 Output:
 
  
 ### Q3: Choose all Developers who make more than all Managers combined (Nested Query)?
-Query:
+Query:SELECT * FROM employee WHERE role = "Developer" and salary > (SELECT MAX(salary) From employee WHERE role = "Manager" );
 
 Output:
 
